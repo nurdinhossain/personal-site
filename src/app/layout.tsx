@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en">
         <body className={inter.className + " flex flex-col justify-between bg-gradient-to-b from-cyan-100 via-indigo-200 to-cyan-100 h-screen"}>
           <Header />
-          {children}
+          <main>{children}</main>
           <p className="text-center text-xl">Copyright © 2024 <b>A Bored Techie</b>. All rights reserved.</p>
         </body>
     </html>

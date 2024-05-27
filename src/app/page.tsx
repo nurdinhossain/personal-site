@@ -14,7 +14,12 @@ export default function Home() {
   ];
 
   return (
-    <main className="flex flex-row justify-between">
+    <div>
+      {/* header */}
+      <h1 className="bg-green-300 border-4 border-dashed border-slate-900 font-bold text-center text-4xl m-6 p-2">Home Page</h1>
+
+      {/* main content */}
+      <main className="flex flex-row justify-between">
       {/* intro box */}
       <div className="flex flex-col bg-red-400 border-4 w-1/2 border-dashed border-slate-900 shadow-2xl text-center ml-6 mr-3 p-2 hover:scale-95 transition ease-in-out">
         <h1 className="text-xl m-2">
@@ -55,5 +60,6 @@ export default function Home() {
         <p>Latest blog post!</p>
       </div>
     </main>
+    </div>
   );
 }

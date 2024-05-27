@@ -9,5 +9,10 @@ export default async function Page() {
     query: POSTS_QUERY,
   })
 
-  return <Posts posts={posts} />
+  return (
+    <div>
+      <h1 className="bg-green-300 border-4 border-dashed border-slate-900 font-bold text-center text-4xl m-6 p-2">Blog</h1>
+      <Posts posts={posts} />
+    </div>
+  );
 }
