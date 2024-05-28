@@ -1,19 +1,8 @@
 import { SanityDocument } from "next-sanity";
 import Link from "next/link";
 import Image from "next/image";
-
-import imageUrlBuilder from "@sanity/image-url"
-import { dataset, projectId } from "../../sanity/env"
-import { PortableText } from "@portabletext/react"
-
-const urlFor = (source: any) =>
-  imageUrlBuilder({ projectId, dataset }).image(source)
-
-function formatDate(isoDate: string): string {
-  const date = new Date(isoDate);
-  const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
-  return date.toLocaleDateString('en-US', options);
-}
+import { urlFor } from "@/utils/helper";
+import formatDate from "@/utils/helper";
 
 export default function Posts({ posts }: { posts: SanityDocument[] }) {
   return (
