@@ -23,10 +23,10 @@ export default function Home() {
       {/* intro box */}
       <div className="flex flex-col bg-red-400 border-4 w-1/2 border-dashed border-slate-900 shadow-2xl text-center ml-6 mr-3 p-2 hover:scale-95 transition ease-in-out">
         <h1 className="text-xl m-2">
-          Hi, welcome to my website! I'm <span className="underline decoration-wavy">Nurdin</span>, a <span className="underline decoration-wavy">first-year</span> undergrad
+          Hi, welcome to my website! I&apos;m <span className="underline decoration-wavy">Nurdin</span>, a <span className="underline decoration-wavy">first-year</span> undergrad
           at the <span className="underline decoration-wavy">University of Virginia</span>🏫 (go Hoos!).
         </h1>
-        <div className='flex justify-center'>
+        <div className="flex justify-center">
           <Image 
             src={me} 
             alt="Picture of me!"
@@ -39,7 +39,7 @@ export default function Home() {
       {/* side-info box */}
       <div className="flex flex-col bg-orange-400 border-4 w-1/2 border-dashed border-slate-900 shadow-2xl text-center mr-6 ml-3 p-2 hover:scale-95 transition ease-in-out">
         <h1 className="text-xl m-2">
-          I'm majoring in <span className="underline decoration-wavy">computer science</span>🖥️, so I wanted to make
+          I&apos;m majoring in <span className="underline decoration-wavy">computer science</span>🖥️, so I wanted to make
           a <span className="underline decoration-wavy">portfolio</span> of my fun projects and a <span className="underline decoration-wavy">log</span> of what I learn along the way.
           Here are some ideas I have:
         </h1>

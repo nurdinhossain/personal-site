@@ -18,7 +18,7 @@ export default function Header()
             </Link>
             <Link href="/blog" className="no-underline hover:underline">Blog💬</Link>
             <a href="https://drive.google.com/file/d/1AQb2tJQAZ5I5PHLCQjCBB9AfG9oM3iGW/view?usp=sharing" target="_blank" className="no-underline hover:underline">Resume✏️</a>
-            <Link href="/about" className="no-underline hover:underline">Contact📞</Link>
+            <Link href="/contact" className="no-underline hover:underline">Contact📞</Link>
         </header>
     );
 }
