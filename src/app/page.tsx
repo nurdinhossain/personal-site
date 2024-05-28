@@ -52,7 +52,7 @@ export default async function Home() {
             a <span className="underline decoration-wavy">portfolio</span> of my fun projects and a <span className="underline decoration-wavy">log</span> of what I learn along the way.
             Here are some ideas I have:
           </h1>
-          <ul className="columns-2 font-bold sm:text-sm md:text-xl lg:text-xl">
+          <ul className="columns-2 font-bold text-xs md:text-sm lg:text-xl">
             {
               toDo.map(
                 (element, i) => {
@@ -71,15 +71,15 @@ export default async function Home() {
             href={"blog/" + posts[0].slug.current}
             className="flex flex-row items-center bg-indigo-400 border-4 border-dashed border-slate-900 text-center text-3xl m-6 p-2 hover:scale-95 shadow-2xl transition ease-in-out"
           >
-            <h2 className="underline decoration-wavy mb-4">{posts[0].title}</h2>
+            <h2 className="underline decoration-wavy mb-4 hidden md:block">{posts[0].title}</h2>
             <Image
               src={urlFor(posts[0].mainImage).width(300).height(300).quality(80).url()}
-              className="border-4 border-solid border-slate-900 mb-4"
+              className="border-4 border-solid border-slate-900 mb-4 object-scale-down"
               width={150}
               height={150}
               alt={posts[0].mainImage.alt || ""}
             />
-            <p>Published on <span className="underline decoration-solid">{formatDate(posts[0].publishedAt)}</span></p>
+            <p className="hidden md:block">Published on <span className="underline decoration-solid">{formatDate(posts[0].publishedAt)}</span></p>
           </Link>
         </div>
       </main>
