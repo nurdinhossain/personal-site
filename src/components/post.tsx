@@ -1,11 +1,7 @@
 import Image from "next/image"
 import { PortableText } from "@portabletext/react"
-import imageUrlBuilder from "@sanity/image-url"
 import { SanityDocument } from "next-sanity"
 import { urlFor } from "@/utils/helper"
-
-import { dataset, projectId } from "../../sanity/env"
-
 
 export default function Post({ post }: { post: SanityDocument }) {
   const { title, mainImage, body } = post
