@@ -7,11 +7,13 @@ import { FormData } from "@/components/formdata";
 
 export default function Contact() {
     const { register, handleSubmit } = useForm<FormData>();
-    const [data, setData] = useState("");
+    const [submit, setSubmit] = useState(false);
 
     function onSubmit(data: FormData) {
-        sendEmail(data);
-        setData(data.email);
+        if (data.name !== "" && data.email !== "" && data.message !== "" && data.botDetect === "") {
+            sendEmail(data);
+            setSubmit(true);
+        }
       }
 
     return (
@@ -21,11 +23,12 @@ export default function Contact() {
 
             <main className="flex flex-row justify-center">
                 <form className="flex flex-col bg-cyan-300 border-4 border-dashed border-slate-900 space-y-10 w-5/12 m-5 p-4" onSubmit={handleSubmit(onSubmit)}>
-                    <input {...register("name")} placeholder="Full name" type="text" name="name" className="h-12 border-4 border-solid border-cyan-700 p-2" />
-                    <input {...register("email")} placeholder="Email address" type="email" name="email" className="h-12 border-4 border-solid border-cyan-700 p-2" />
-                    <textarea {...register("message")} placeholder="Message" name="message" className="h-80 border-4 border-solid border-cyan-700 p-2" />
+                    <input {...register("botDetect")} type="email" hidden />
+                    <input {...register("name")} placeholder="Full name" type="text" className="h-12 border-4 border-solid border-cyan-700 p-2" />
+                    <input {...register("email")} placeholder="Email address" type="email" className="h-12 border-4 border-solid border-cyan-700 p-2" />
+                    <textarea {...register("message")} placeholder="Message" className="h-80 border-4 border-solid border-cyan-700 p-2" />
                     {
-                        data == "" ? 
+                        submit == false ? 
                         <input type="submit" className="bg-indigo-400 border-4 border-solid border-indigo-700 text-2xl" /> : 
                         <div className="bg-green-400 border-4 border-solid border-green-700 text-2xl text-center">Sent!</div>
                     }
