@@ -22,7 +22,7 @@ export default function Contact() {
             <h1 className="bg-green-300 border-4 border-dashed border-slate-900 font-bold text-center text-4xl m-6 p-2">Contact</h1>
 
             <main className="flex flex-row justify-center">
-                <form className="flex flex-col bg-cyan-300 border-4 border-dashed border-slate-900 space-y-10 w-5/12 m-5 p-4" onSubmit={handleSubmit(onSubmit)}>
+                <form className="flex flex-col bg-cyan-300 border-4 border-dashed border-slate-900 space-y-10 w-full lg:w-1/2 m-6 p-4" onSubmit={handleSubmit(onSubmit)}>
                     <input {...register("botDetect")} type="email" hidden />
                     <input {...register("name")} placeholder="Full name" type="text" className="h-12 border-4 border-solid border-cyan-700 p-2" />
                     <input {...register("email")} placeholder="Email address" type="email" className="h-12 border-4 border-solid border-cyan-700 p-2" />
