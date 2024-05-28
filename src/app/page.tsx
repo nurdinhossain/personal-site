@@ -52,7 +52,7 @@ export default async function Home() {
             a <span className="underline decoration-wavy">portfolio</span> of my fun projects and a <span className="underline decoration-wavy">log</span> of what I learn along the way.
             Here are some ideas I have:
           </h1>
-          <ul className="columns-2 font-bold text-xl">
+          <ul className="columns-2 font-bold sm:text-sm md:text-xl lg:text-xl">
             {
               toDo.map(
                 (element, i) => {
