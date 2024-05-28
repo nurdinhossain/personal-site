@@ -75,8 +75,8 @@ export default async function Home() {
             <Image
               src={urlFor(posts[0].mainImage).width(300).height(300).quality(80).url()}
               className="border-4 border-solid border-slate-900 mb-4"
-              width={200}
-              height={200}
+              width={150}
+              height={150}
               alt={posts[0].mainImage.alt || ""}
             />
             <p>Published on <span className="underline decoration-solid">{formatDate(posts[0].publishedAt)}</span></p>
