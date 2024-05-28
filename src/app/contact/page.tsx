@@ -19,7 +19,7 @@ export default function Contact() {
             <h1 className="bg-green-300 border-4 border-dashed border-slate-900 font-bold text-center text-4xl m-6 p-2">Contact</h1>
 
             <main className="flex flex-row justify-center">
-                <form name="ContactForm" className="flex flex-col bg-cyan-300 border-4 border-dashed border-slate-900 space-y-10 w-5/12 m-5 p-4" onSubmit={handleSubmit((data) => setData(JSON.stringify(data)))} data-netlify={true} netlify-honeypot="bot-field">
+                <form name="ContactForm" method="POST" className="flex flex-col bg-cyan-300 border-4 border-dashed border-slate-900 space-y-10 w-5/12 m-5 p-4" onSubmit={handleSubmit((data) => setData(JSON.stringify(data)))} data-netlify={true} netlify-honeypot="bot-field">
                     <input {...register("name")} placeholder="Full name" className="h-12 border-4 border-solid border-cyan-700 p-2" />
                     <input {...register("email")} placeholder="Email address" className="h-12 border-4 border-solid border-cyan-700 p-2" />
                     <textarea {...register("message")} placeholder="Message" className="h-80 border-4 border-solid border-cyan-700 p-2" />
