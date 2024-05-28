@@ -18,12 +18,28 @@ export default function Contact() {
             {/* header */}
             <h1 className="bg-green-300 border-4 border-dashed border-slate-900 font-bold text-center text-4xl m-6 p-2">Contact</h1>
 
+            <form name="contact" method="POST" data-netlify="true">
+                <p>
+                    <label>Your Name: <input type="text" name="name" /></label>
+                </p>
+                <p>
+                    <label>Your Email: <input type="email" name="email" /></label>
+                </p>
+                <p>
+                    <label>Your Role: <select name="role[]" multiple>
+                    <option value="leader">Leader</option>
+                    <option value="follower">Follower</option>
+                    </select></label>
+                </p>
+                <p>
+                    <label>Message: <textarea name="message"></textarea></label>
+                </p>
+                <p>
+                    <button type="submit">Send</button>
+                </p>
+            </form>
+
             <main className="flex flex-row justify-center">
-                <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
-                    <input type="text" name="name" />
-                    <input type="email" name="email" />
-                    <textarea name="message"></textarea>
-                </form>
                 <form name="contact" className="flex flex-col bg-cyan-300 border-4 border-dashed border-slate-900 space-y-10 w-5/12 m-5 p-4" onSubmit={handleSubmit((data) => setData(JSON.stringify(data)))} data-netlify={true} netlify-honeypot="bot-field">
                     <input type="hidden" name="form-name" value="contact" />
                     <input {...register("name")} placeholder="Full name" type="text" name="name" className="h-12 border-4 border-solid border-cyan-700 p-2" />
