@@ -16,13 +16,13 @@ export default function Posts({ posts }: { posts: SanityDocument[] }) {
               className="flex flex-col items-center bg-orange-400 border-4 border-dashed border-slate-900 text-center text-xl md:text-3xl m-6 p-2 hover:scale-95 shadow-2xl transition ease-in-out"
             >
               <h2 className="underline decoration-wavy mb-4">{post.title}</h2>
-              <Image 
+              {post.mainImage ? <Image 
                 src={urlFor(post.mainImage).width(300).height(300).quality(80).url()}
                 className="border-4 border-solid border-slate-900 mb-4"
                 width={300}
                 height={300}
                 alt={post.mainImage.alt || ""}
-              />
+              /> : null}
               <p>Published on <span className="underline decoration-solid">{formatDate(post.publishedAt)}</span></p>
             </Link>
           ))

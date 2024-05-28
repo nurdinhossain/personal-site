@@ -72,13 +72,13 @@ export default async function Home() {
             className="flex flex-row justify-center items-center bg-indigo-400 border-4 border-dashed border-slate-900 text-center m-6 p-2 hover:scale-95 shadow-2xl transition ease-in-out"
           >
             <h2 className="underline decoration-wavy mb-4 text-lg lg:text-2xl w-1/3">{posts[0].title}</h2>
-            <Image
+            {posts[0].mainImage ? <Image
               src={urlFor(posts[0].mainImage).width(300).height(300).quality(80).url()}
               className="border-4 border-solid border-slate-900 mb-4 object-scale-down w-1/3"
               width={150}
               height={150}
               alt={posts[0].mainImage.alt || ""}
-            />
+            /> : null}
             <p className="text-base lg:text-2xl w-1/3">Published on <span className="underline decoration-solid">{formatDate(posts[0].publishedAt)}</span></p>
           </Link>
         </div>
