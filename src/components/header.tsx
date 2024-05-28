@@ -6,9 +6,9 @@ export default function Header()
 {
     return (
         /* header bar */
-        <header className='flex flex-row flex-wrap justify-between text-4xl mx-6 mt-6'>
+        <header className='flex flex-col items-center md:flex-row flex-wrap justify-between space-y-5 xl:space-y-0 text-4xl mx-6 mt-6'>
             <Link href="/" className='flex flex-row'>
-                <span className='text-5xl underline decoration-wavy'>A Bored Techie</span>
+                <span className='text-4xl md:text-5xl underline decoration-wavy'>A Bored Techie</span>
                 <Image 
                     src={robot}
                     alt=""

@@ -28,9 +28,9 @@ export default async function Home() {
       <h1 className="bg-green-300 border-4 border-dashed border-slate-900 font-bold text-center text-4xl m-6 p-2">Home Page</h1>
 
       {/* main content */}
-      <main className="flex flex-row justify-between">
+      <main className="flex flex-col md:flex-row justify-between mr-12 md:mr-0">
         {/* intro box */}
-        <div className="flex flex-col bg-red-400 border-4 w-1/2 border-dashed border-slate-900 shadow-2xl text-center ml-6 mr-3 p-2 hover:scale-95 transition ease-in-out">
+        <div className="flex flex-col bg-red-400 border-4 w-full md:w-1/2 border-dashed border-slate-900 shadow-2xl text-center mb-4 md:mb-0 mr-3 ml-6 p-2 hover:scale-95 transition ease-in-out">
           <h1 className="text-xl m-2">
             Hi, welcome to my website! I&apos;m <span className="underline decoration-wavy">Nurdin</span>, a <span className="underline decoration-wavy">first-year</span> undergrad
             at the <span className="underline decoration-wavy">University of Virginia</span>🏫 (go Hoos!).
@@ -46,7 +46,7 @@ export default async function Home() {
         </div>
 
         {/* side-info box */}
-        <div className="flex flex-col bg-orange-400 border-4 w-1/2 border-dashed border-slate-900 shadow-2xl text-center mr-6 ml-3 p-2 hover:scale-95 transition ease-in-out">
+        <div className="flex flex-col bg-orange-400 border-4 w-full md:w-1/2 border-dashed border-slate-900 shadow-2xl text-center mr-3 ml-6 md:mr-6 md:ml-3 p-2 hover:scale-95 transition ease-in-out">
           <h1 className="text-xl m-2">
             I&apos;m majoring in <span className="underline decoration-wavy">computer science</span>🖥️, so I wanted to make
             a <span className="underline decoration-wavy">portfolio</span> of my fun projects and a <span className="underline decoration-wavy">log</span> of what I learn along the way.
@@ -71,7 +71,7 @@ export default async function Home() {
             href={"blog/" + posts[0].slug.current}
             className="flex flex-row justify-center items-center bg-indigo-400 border-4 border-dashed border-slate-900 text-center m-6 p-2 hover:scale-95 shadow-2xl transition ease-in-out"
           >
-            <h2 className="underline decoration-wavy mb-4 hidden text-2xl lg:block w-1/3">{posts[0].title}</h2>
+            <h2 className="underline decoration-wavy mb-4 text-xl lg:text-2xl w-1/3">{posts[0].title}</h2>
             <Image
               src={urlFor(posts[0].mainImage).width(300).height(300).quality(80).url()}
               className="border-4 border-solid border-slate-900 mb-4 object-scale-down w-1/3"
@@ -79,7 +79,7 @@ export default async function Home() {
               height={150}
               alt={posts[0].mainImage.alt || ""}
             />
-            <p className="hidden text-2xl lg:block w-1/3">Published on <span className="underline decoration-solid">{formatDate(posts[0].publishedAt)}</span></p>
+            <p className="text-xl lg:text-2xl w-1/3">Published on <span className="underline decoration-solid">{formatDate(posts[0].publishedAt)}</span></p>
           </Link>
         </div>
       </main>

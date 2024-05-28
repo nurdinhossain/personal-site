@@ -7,7 +7,7 @@ import formatDate from "@/utils/helper";
 export default function Posts({ posts }: { posts: SanityDocument[] }) {
   return (
     <div className="flex flex-row justify-center">
-      <main className="w-1/2">
+      <main className="grid grid-cols-2 w-screen">
         {posts?.length > 0 ? (
           posts.map((post) => (
             <Link
