@@ -6,6 +6,7 @@ import { POSTS_QUERY } from "../../sanity/lib/queries";
 import Link from "next/link";
 import { urlFor } from "@/utils/helper";
 import formatDate from "@/utils/helper";
+import {getImageDimensions} from '@sanity/asset-utils'
 
 export default async function Home() {
   const toDo: string[] = [
