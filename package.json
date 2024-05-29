@@ -12,13 +12,16 @@
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.43.0",
     "@types/nodemailer": "^6.4.15",
+    "easymde": "^2.18.0",
     "next": "14.2.3",
     "next-sanity": "^9.3.0",
     "nodemailer": "^6.9.13",
     "react": "^18",
     "react-dom": "^18",
     "react-hook-form": "^7.51.5",
+    "react-markdown": "^9.0.1",
     "sanity": "^3.43.0",
+    "sanity-plugin-markdown": "^4.1.2",
     "styled-components": "^6.1.11"
   },
   "devDependencies": {

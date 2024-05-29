@@ -3,6 +3,7 @@ import { PortableText } from "@portabletext/react"
 import { SanityDocument } from "next-sanity"
 import { urlFor } from "@/utils/helper"
 import {getImageDimensions} from '@sanity/asset-utils'
+import Markdown from "react-markdown"
 
 function SanityImage(source: any) {
   const img = source.value
@@ -22,11 +23,11 @@ function SanityImage(source: any) {
 }
 
 export default function Post({ post }: { post: SanityDocument }) {
-  const { title, mainImage, body } = post
+  const { title, mainImage, body, code } = post
   const {width, height} = getImageDimensions(mainImage);
 
   return (
-    <main className="container mx-auto prose prose-lg p-4 text-black text-center">
+    <main className="container mx-auto prose prose-lg p-4 text-black">
       {title ? <h1 className="bg-green-300 border-4 border-dashed border-slate-900 font-bold text-center text-4xl mt-6 p-2 font-mono">{title}</h1> : null}
       <div className="bg-red-400 border-4 border-dashed border-slate-900 p-4 font-mono">
         {mainImage ? (
@@ -48,6 +49,7 @@ export default function Post({ post }: { post: SanityDocument }) {
             }
           }}
         /> : null}
+        <Markdown>{code}</Markdown>
       </div>
     </main>
   )
