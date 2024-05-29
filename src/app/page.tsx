@@ -74,7 +74,7 @@ export default async function Home() {
             <h2 className="underline decoration-wavy mb-4 text-lg lg:text-2xl w-1/3">{posts[0].title}</h2>
             {posts[0].mainImage ? <Image
               src={urlFor(posts[0].mainImage).width(300).height(300).quality(80).url()}
-              className="border-4 border-solid border-slate-900 mb-4 object-scale-down w-1/3"
+              className="bg-slate-300 border-4 border-solid border-slate-900 mb-4 object-scale-down w-1/3"
               width={150}
               height={150}
               alt={posts[0].mainImage.alt || ""}
