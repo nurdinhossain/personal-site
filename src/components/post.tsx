@@ -4,6 +4,10 @@ import { SanityDocument } from "next-sanity"
 import { urlFor } from "@/utils/helper"
 import {getImageDimensions} from '@sanity/asset-utils'
 import Markdown from "react-markdown"
+import remarkGfm from 'remark-gfm'
+import remarkMath from "remark-math"
+import rehypeKatex from 'rehype-katex'
+import 'katex/dist/katex.min.css'
 
 function SanityImage(source: any) {
   const img = source.value
@@ -27,7 +31,7 @@ export default function Post({ post }: { post: SanityDocument }) {
   const {width, height} = getImageDimensions(mainImage);
 
   return (
-    <main className="container mx-auto prose prose-lg p-4 text-black">
+    <main className="container mx-auto prose prose-lg p-4 text-black marker:text-black">
       {title ? <h1 className="bg-green-300 border-4 border-dashed border-slate-900 font-bold text-center text-4xl mt-6 p-2 font-mono">{title}</h1> : null}
       <div className="bg-red-400 border-4 border-dashed border-slate-900 p-4 font-mono">
         {mainImage ? (
@@ -49,7 +53,9 @@ export default function Post({ post }: { post: SanityDocument }) {
             }
           }}
         /> : null}
-        <Markdown>{code}</Markdown>
+        {code ?
+        <Markdown remarkPlugins={[remarkGfm, remarkMath]} rehypePlugins={[rehypeKatex]}>{code}</Markdown>
+        : null}
       </div>
     </main>
   )
