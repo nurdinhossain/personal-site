@@ -18,7 +18,7 @@ export default function Posts({ posts }: { posts: SanityDocument[] }) {
               <h2 className="underline decoration-wavy mb-4">{post.title}</h2>
               {post.mainImage ? <Image 
                 src={urlFor(post.mainImage).width(300).height(300).quality(80).url()}
-                className="border-4 border-solid border-slate-900 mb-4"
+                className="bg-slate-300 border-4 border-solid border-slate-900 mb-4"
                 width={300}
                 height={300}
                 alt={post.mainImage.alt || ""}
