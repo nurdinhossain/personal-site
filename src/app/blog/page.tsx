@@ -3,6 +3,12 @@ import { SanityDocument } from "next-sanity"
 import Posts from "../../components/posts";
 import { sanityFetch } from "../../../sanity/lib/fetch"
 import { POSTS_QUERY } from "../../../sanity/lib/queries"
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Blog | A Bored Techie",
+  description: "Blog page for Nurdin Hossain's website; A collection of Nurdin's latest projects.",
+};
 
 export default async function Page() {
   const posts = await sanityFetch<SanityDocument[]>({

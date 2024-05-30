@@ -11,7 +11,7 @@ export default function Header()
                 <span className='text-4xl md:text-5xl underline decoration-wavy'>A Bored Techie</span>
                 <Image 
                     src={robot}
-                    alt=""
+                    alt="Robot SVG"
                     width={40}
                     height={40}
                 />

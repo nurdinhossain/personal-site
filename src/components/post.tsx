@@ -26,6 +26,16 @@ function SanityImage(source: any) {
   )
 }
 
+// for formatted time
+const options: Intl.DateTimeFormatOptions = {
+  month: "long",
+  day: "numeric",
+  year: "numeric",
+  hour: "numeric",
+  minute: "numeric",
+  hour12: true
+};
+
 export default function Post({ post }: { post: SanityDocument }) {
   const { title, mainImage, body, code } = post
   const {width, height} = getImageDimensions(mainImage);
@@ -45,6 +55,7 @@ export default function Post({ post }: { post: SanityDocument }) {
             />
           </div>
         ) : null}
+        {post.publishedAt ? <p className='text-center font-bold underline'>Published on {new Intl.DateTimeFormat("en-US", options).format(new Date(post.publishedAt))}</p> : null}
         {body ? 
         <PortableText value={body}
           components={{

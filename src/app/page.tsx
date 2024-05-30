@@ -6,7 +6,12 @@ import { POSTS_QUERY } from "../../sanity/lib/queries";
 import Link from "next/link";
 import { urlFor } from "@/utils/helper";
 import formatDate from "@/utils/helper";
-import {getImageDimensions} from '@sanity/asset-utils'
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Home | A Bored Techie",
+  description: "Home page for Nurdin Hossain's website, containing a collection of CS ventures.",
+};
 
 export default async function Home() {
   const toDo: string[] = [
@@ -39,7 +44,7 @@ export default async function Home() {
           <div className="flex justify-center">
             <Image
               src={me}
-              alt="Picture of me!"
+              alt="Headshot photo"
               className="m-2 border-4 border-slate-900"
               width={400}
             />
