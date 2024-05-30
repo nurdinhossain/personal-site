@@ -31,7 +31,7 @@ export default function Post({ post }: { post: SanityDocument }) {
   const {width, height} = getImageDimensions(mainImage);
 
   return (
-    <main className="container mx-auto prose prose-lg p-4 text-black marker:text-black">
+    <main className="container mx-auto prose prose-lg p-4 text-black marker:text-black break-words">
       {title ? <h1 className="bg-green-300 border-4 border-dashed border-slate-900 font-bold text-center text-4xl mt-6 p-2 font-mono">{title}</h1> : null}
       <div className="bg-red-400 border-4 border-dashed border-slate-900 p-4 font-mono">
         {mainImage ? (
