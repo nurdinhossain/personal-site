@@ -39,6 +39,8 @@ const options: Intl.DateTimeFormatOptions = {
 export default function Post({ post }: { post: SanityDocument }) {
   const { title, mainImage, body, code } = post
   const {width, height} = getImageDimensions(mainImage);
+  const date = new Date(post.publishedAt);
+  date.setHours(date.getHours() - 4); // Subtract 4 hours to convert UTC to Eastern Time
 
   return (
     <main className="container mx-auto prose prose-lg p-4 text-black marker:text-black break-words">
@@ -55,7 +57,7 @@ export default function Post({ post }: { post: SanityDocument }) {
             />
           </div>
         ) : null}
-        {post.publishedAt ? <p className='text-center font-bold underline'>Published on {new Date(post.publishedAt).toLocaleString("en-US", options)}</p> : null}
+        {post.publishedAt ? <p className='text-center font-bold underline'>Published on {date.toLocaleString("en-US", options)}</p> : null}
         {body ? 
         <PortableText value={body}
           components={{
