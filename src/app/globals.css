@@ -7,3 +7,12 @@
     text-wrap: balance;
   }
 }
+
+.markdown-content img {
+  @apply block mx-auto;
+}
+
+.latex-content {
+  overflow-x: auto;
+  word-wrap: break-word;
+}

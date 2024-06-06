@@ -67,7 +67,7 @@ export default function Post({ post }: { post: SanityDocument }) {
           }}
         /> : null}
         {code ?
-        <Markdown className="bg-slate-200 p-4 border-4 border-solid border-slate-900" remarkPlugins={[remarkGfm, remarkMath]} rehypePlugins={[rehypeKatex]}>{code}</Markdown>
+        <Markdown className="markdown-content latex-content bg-slate-200 p-4 border-4 border-solid border-slate-900" remarkPlugins={[remarkGfm, remarkMath]} rehypePlugins={[rehypeKatex]}>{code}</Markdown>
         : null}
       </div>
     </main>
