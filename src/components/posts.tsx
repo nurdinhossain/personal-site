@@ -13,7 +13,7 @@ export default function Posts({ posts }: { posts: SanityDocument[] }) {
             <Link
               key={post._id}
               href={"blog/" + post.slug.current}
-              className="flex flex-col items-center bg-orange-400 border-4 border-dashed border-slate-900 text-center text-xl md:text-3xl m-6 p-2 hover:scale-95 shadow-2xl transition ease-in-out"
+              className="flex flex-col items-center justify-between bg-orange-400 border-4 border-dashed border-slate-900 text-center text-xl md:text-3xl m-6 p-2 hover:scale-95 shadow-2xl transition ease-in-out"
             >
               <h2 className="underline decoration-wavy mb-4">{post.title}</h2>
               {post.mainImage ? <Image 
