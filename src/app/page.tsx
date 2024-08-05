@@ -38,7 +38,7 @@ export default async function Home() {
         {/* intro box */}
         <div className="flex flex-col bg-red-400 border-4 w-full md:w-1/2 border-dashed border-slate-900 shadow-2xl text-center mb-4 md:mb-0 mr-3 ml-6 p-2 hover:scale-95 transition ease-in-out">
           <h2 className="text-xl m-2">
-            Hi, welcome to my website! I&apos;m <span className="underline decoration-wavy">Nurdin</span>, a <span className="underline decoration-wavy">first-year</span> undergrad
+            Hi, welcome to my website! I&apos;m <span className="underline decoration-wavy">Nurdin</span>, a <span className="underline decoration-wavy">second-year</span> undergrad
             at the <span className="underline decoration-wavy">University of Virginia</span>🏫 (go Hoos!).
           </h2>
           <div className="flex justify-center">
